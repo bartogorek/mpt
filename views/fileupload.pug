@@ -1,0 +1,11 @@
+extends layout
+block variables
+  -var choice='upload';
+block content
+  .container.block
+    h4= title
+    p File upload page that allows to upload csv file to populate database.
+    p Use the form below to upload a list of orders
+    form(action="/catalog/fileupload/upload" method="POST" encType="multipart/form-data")
+      input(type="file" name="file" accept="*.csv")
+      input(type="submit" value="Upload Orders")

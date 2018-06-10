@@ -1,0 +1,35 @@
+extends layout
+block variables
+  -var choice='dashboard';
+block content
+  .container.filter-bar
+    .filter-section
+      button#option1.btn.btn-primary.btn-sm.qck-search.btnDisabled(role='button') option 1
+      button#option2.btn.btn-primary.btn-sm.qck-search.btnEnabled(type='button') option 2
+      button#option3.btn.btn-primary.btn-sm.qck-search.btnDisabled(type='button') option 3
+    .filter-section.datesel
+      form(method='GET' action='/catalog/date/dashboard')
+        input#date_selection.form-control(type='text' name='date_selection' placeholder='DD/MM/YYYY')
+        button.btn.btn-sm.qck-search.btn-primary(type='submit') Submit
+  hr
+
+  div.container.dashboard
+    div
+      p.date production date : #{date}
+      h4 Dashboard view
+      br
+      table.table
+        thead
+          tr
+            th(scope='col') Number of orders
+            th(scope='col') Total Qty
+            th(scope='col') Made Qty
+            th(scope='col') Total Volume
+            th(scope='col') Made Volume
+        tbody
+          tr
+            td #{n}
+            td #{startQty}
+            td #{compQty}
+            td #{startVol.toFixed(2)}
+            td #{compVol.toFixed(2)}

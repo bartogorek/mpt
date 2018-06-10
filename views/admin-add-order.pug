@@ -1,0 +1,65 @@
+extends layout
+block variables
+  -var choice='admin';
+block content
+  div.container
+    h1.page-title= title
+
+    form(method='POST' action='')
+      div.form-group
+        label(for='product_code') Product Code:
+        input#product_code.form-control(type='text' name='product_code' required='true')
+      div.form-group
+        label(for='product_name') Product Name:
+        input#product_name.form-control(type='text' name='product_name' required='true')
+      div.form-group
+        label(for='quantity') Quantity:
+        input#quantity.form-control(type='number' name='quantity' required='true')
+      div.form-group
+        label(for='resource') Resource:
+        input#resource.form-control(type='text' name='resource' required='true')
+      div.form-group
+        label(for='start_time') Start time:
+        input#start_time.form-control(type='text' name='start_time' require='true')
+      div.form-group
+        label(for='end_time') End time:
+        input#end_time.form-control(type='text' name='end_time' require='true')
+      div.form-group
+        label(for='roll_job') Roll job:
+        input#roll_job.form-control(type='text' name='roll_job' require='true')
+      div.form-group
+        label(for='date_attribute') Date attribute:
+        input#date_attribute.form-control(type='text' name='date_attribute' require='true')
+      div.form-group
+        label(for='product_weight') Product Weight:
+        input#product_weight.form-control(type='number' name='product_weight' required='true')
+      div.form-group
+        label(for='units_per_case') Units Per Case:
+        input#units_per_case.form-control(type='number' name='units_per_case' required='true')
+      div.form-group
+        label(for='order_date') Production date:
+        input#order_date.form-control(type='text' name='order_date' required='true')
+      div.form-group
+        label(for='date_created') Date created:
+        input#date_created.form-control(type='text' name='date_created' require='true')
+      div.form-group
+        label(for='quantity_completed') Quantity completed:
+        input#quantity_completed.form-control(type='number' name='quantity_completed' require='true')
+      div.form-group
+        label(for='status_if_hold') Status 1:
+        input#status_if_hold.form-control(type='text' name='status_if_hold' required='true')
+      div.form-group
+        label(for='status_if_open') Status 2:
+        input#status_if_open.form-control(type='text' name='status_if_open' required='true')
+      div.form-group
+        label(for='status_if_original') Status 3:
+        input#status_if_original.form-control(type='text' name='status_if_original' required='true')
+      div.form-group
+        label(for='area') Area:
+        input#area.form-control(type='text' name='area' required='true')
+      br
+      button.btn.btn-primary(type='submit') Submit
+      if errors
+        ul
+          for error in errors
+            li!= error.msg

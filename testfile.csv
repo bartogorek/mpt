@@ -1,0 +1,8 @@
+productCode,productName,productWeight,unitsPerCase,quantity,orderDate,statusIfHold,statusIfOpen,statusIfOriginal,area
+12345,ASDA,0.45,4,10033,22042018,use,open,added,packing
+12344,ASDA,0.55,4,100,22042018,use,closed,original,packing
+12133,Coop,0.25,4,10,22042018,reject,open,original,packing
+12343,M+S,0.85,4,134,22042018,hold,open,original,mixing
+12343,Morrisons,0.45,4,343,22042018,use,open,original,packing
+12312,Aldi,0.25,4,123,22042018,reject,open,original,packing
+23434,Lidl,0.15,4,4423,22042018,hold,open,original,packing

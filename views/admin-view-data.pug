@@ -1,0 +1,51 @@
+extends layout
+block variables
+  -var choice='admin';
+block content
+  div.container
+    h1.page-title= title
+    table.table
+      thead
+        tr
+          th(scope='col') p-code
+          th(scope='col') description
+          th(scope='col') quantity
+          th(scope='col') resource
+          th(scope='col') start time
+          th(scope='col') end time
+          th(scope='col') roll job
+          th(scope='col') date attribute
+          th(scope='col') weight
+          th(scope='col') upc
+          th(scope='col') production date
+          th(scope='col') date created
+          th(scope='col') qty completed
+          th(scope='col') status 1
+          th(scope='col') status 2
+          th(scope='col') status 3
+          th(scope='col') area
+          th(scope='col') ID
+          th(scope='col') Delete
+      tbody
+        each val in orderinstance_list
+          tr
+            th(scope='row') #{val.productCode}
+            td #{val.productName}
+            td #{val.quantity}
+            td #{val.resource}
+            td #{val.startTime}
+            td #{val.endTime}
+            td #{val.rollJob}
+            td #{val.dateAttribute}
+            td #{val.productWeight}
+            td #{val.unitsPerCase}
+            td #{val.orderDate}
+            td #{val.dateCreated}
+            td #{val.quantityCompleted}
+            td #{val.statusIfHold}
+            td #{val.statusIfOpen}
+            td #{val.statusIfOriginal}
+            td #{val.area}
+            td #{val._id}
+            td
+              a(href='/catalog/orderinstance/delete/'+val._id) Delete

@@ -1,0 +1,15 @@
+extends layout
+block variables
+  -var choice='admin';
+block content
+  div.container.admin-cards
+    a.card(href='/catalog/admin/view-data')
+      h6.admin-tile-text View and Edit Data
+    a.card(href='/catalog/admin/add-order')
+      h6.admin-tile-text Add Works Order
+    a.card(href='#')
+      h6.admin-tile-text Edit Works Order
+    a.card(href='#')
+      h6.admin-tile-text Add or Edit User
+    a.card(href='#')
+      h6.admin-tile-text Upload New Files

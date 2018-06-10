@@ -1,0 +1,72 @@
+extends layout
+block variables
+  -var choice='home';
+block content
+
+  .container
+    .row
+      div.col-md-6.orderView
+        h4= order.productName
+        hr
+        dl.row.order-info-list
+          dt.col-sm-6 id:
+          dd.col-sm-6 #{order._id}
+        dl.row.order-info-list
+          dt.col-sm-6 product code:
+          dd.col-sm-6 #{order.productCode}
+        dl.row.order-info-list
+          dt.col-sm-6 total qty / made qty [cases]:
+          dd.col-sm-6 #{order.quantity} / #{order.quantityCompleted}
+        dl.row.order-info-list
+          dt.col-sm-6 total vol / produced vol [t]:
+          dd.col-sm-6 #{order.volume.toFixed(2)} / #{order.volumeMade.toFixed(2)}
+        dl.row.order-info-list
+          dt.col-sm-6 resource:
+          dd.col-sm-6 #{order.resource}
+        dl.row.order-info-list
+          dt.col-sm-6 start time:
+          dd.col-sm-6 #{order.startTime}
+        dl.row.order-info-list
+          dt.col-sm-6 end time:
+          dd.col-sm-6 #{order.endTime}
+        dl.row.order-info-list
+          dt.col-sm-6 pack weight [kg]:
+          dd.col-sm-6 #{order.productWeight}
+        dl.row.order-info-list
+          dt.col-sm-6 production date:
+          dd.col-sm-6 #{order.orderDate}
+        dl.row.order-info-list
+          dt.col-sm-6 status 1:
+          dd.col-sm-6 #{order.statusIfHold}
+        dl.row.order-info-list
+          dt.col-sm-6 status 2:
+          dd.col-sm-6 #{order.statusIfOpen}
+        dl.row.order-info-list
+          dt.col-sm-6 status 3:
+          dd.col-sm-6 #{order.statusIfOriginal}
+        dl.row.order-info-list
+          dt.col-sm-6 area:
+          dd.col-sm-6 #{order.area}
+
+      div.col-md-6.orderView
+        form(method='POST' action='')
+          div.form-control
+            label(for='quantityCompleted')
+            input#qtyMade.form-control(type='number' name='quantityCompleted' value=(undefined===author ? '' : author.date_of_death) )
+            button.card(type='submit')
+              h6.admin-tile-submit-text Update
+        div.container.button-board
+          //a.card.action-button(href='/catalog/orderinstance/delete/'+order._id)
+          // above line is not accessible for all user, user authentication needs putting in
+          a.card.action-button(href='#')
+            h6.admin-tile-text 'Placeholder'
+          a.card.action-button(href='/catalog/orderinstance/roll/'+order._id)
+            h6.admin-tile-text Roll
+          a.card.action-button(href='#')
+            h6.admin-tile-text Hold
+          a.card.action-button(href='#')
+            h6.admin-tile-text Release
+          a.card.action-button(href='#')
+            h6.admin-tile-text Cancel
+          a.card.action-button(href='#')
+            h6.admin-tile-text View

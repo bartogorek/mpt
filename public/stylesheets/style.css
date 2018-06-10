@@ -1,0 +1,185 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #346;
+  font-weight: 600;
+}
+a:hover {
+  color: #98e698;
+}
+.red {
+  font-size: 30px;
+}
+/** standard pug css (?) above, leave it in for now **/
+
+/** my css below, to be verified if all needed  ******** **/
+a.no-style {
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  color: #8c8c8c;
+}
+.logo {
+  text-align: right;
+  font-weight: 600;
+}
+.nav {
+margin-top: 0px;
+}
+.qck-search {
+font-size: 12px;
+}
+/*
+button[aria-pressed="false"] {
+    opacity: 0.6;
+}
+*/
+.btnDisabled {
+  opacity: 0.5;
+}
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+  outline: none;
+  box-shadow: none;
+}
+.btn {
+  background-color: #79d2a6;
+  border: 1px solid #6fdc6f;
+}
+.btn:hover {
+  background-color: #79d2a6;
+  border: 1px solid green;
+}
+.filter-section {
+display: inline-block;
+padding-top: 14px;
+margin-left: 17px;
+}
+.filter-section button {
+  margin: 3px;
+}
+#date_selection {
+  width: 131px;
+  height: 39px;
+  display: inline;
+}
+.date {
+  font-size: 12px;
+  text-align: right;
+}
+.card {
+  text-align: center;
+  width: 9rem;
+  height: 7rem;
+  margin: 1.18rem;
+  padding: .7rem;
+  display: inline-block;
+  background-color: #c1f0c1;
+  font-size: 0.7rem;
+  color: #346;
+}
+.tileTitle {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+.admin-cards {
+  padding: 1.4rem;
+  margin: 1.2rem auto;
+  text-align: center;
+}
+a.card {
+  font-weight: lighter;
+  text-decoration: none;
+  color: #346;
+  background-color: #c1f0c1;
+}
+a.tile-red {
+  background-color: #ffb3b3;
+}
+a.tile-amber {
+  background-color: #ffbf80;
+}
+a.tile-green {
+  background-color: #6fdc6f;
+}
+.admin-tile-text {
+  margin-top: 1.2rem;
+  font-size: 17px;
+  font-weight: 600;
+}
+.admin-tile-submit-text {
+  margin-top: 0.7rem;
+  font-size: 17px;
+  font-weight: 600;
+}
+button.card:hover {
+  cursor: pointer;
+}
+.page-title {
+  margin: 1.6rem;
+}
+
+/** styling for order view page **/
+.orderView {
+  padding: 2rem 2rem;
+}
+#qtyMade {
+  height: 93px;
+  width: 200px;
+  margin: 1.4rem 2.5rem;
+  display: inline-block;
+}
+.button-board {
+  margin-top: 0.5rem;
+  margin-left: 0.3rem;
+}
+.action-button {
+  margin: 15px;
+  width: 8rem;
+  height: 6rem;
+}
+.col-form-label {
+  text-align: right;
+}
+.submit1 {
+float: right;
+width: 150px;
+margin-top: 30px;
+}
+.order-info-list dd, dt {
+  margin: -0.3rem 0;
+}
+.order-info-list dd {
+  text-align: left;
+}
+.order-info-list dt {
+  text-align: right;
+}
+/* dashboard view styles */
+.datesel {
+  float: right;
+}
+.dashboard p {
+
+}
+.table {
+  text-align: center;
+}
+/* footer */
+.footer {
+  margin-top: 250px;
+}
+.footer-nav {
+  text-align: center;
+
+}
+.footer-nav li {
+  display: inline-block;
+  font-size: 12px;
+}
+.block {
+  margin: 40px 40px;
+}

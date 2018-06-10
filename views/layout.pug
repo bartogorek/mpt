@@ -1,0 +1,66 @@
+block variables
+  -var choice='home';
+doctype html
+html
+  head
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    link(rel="stylesheet" href="/stylesheets/bootstrap.css")
+    link(rel="stylesheet" href="/stylesheets/style.css")
+    link(href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet")
+
+    script(src="/javascripts/jquery.js")
+    script(src="/javascripts/popper.js")
+    script(src="/javascripts/jqueryscripts.js")
+    script(src="/javascripts/scripts.js")
+
+    title=title
+
+  body
+    .container
+      h2.logo
+        a.no-style(href="/") Manufacturing Progress Tracker
+      ul.nav.nav-tabs
+        li.nav-item
+          if choice==='home'
+            a.nav-link.active(href="/catalog/index") Home
+          else
+            a.nav-link(href="/catalog/index") Home
+        li.nav-item
+          if choice==='admin'
+            a.nav-link.active(href="/catalog/admin") Admin
+          else
+            a.nav-link(href="/catalog/admin") Admin
+        li.nav-item
+          if choice==='dashboard'
+            a.nav-link.active(href="/catalog/dashboard") Dashboard
+          else
+            a.nav-link(href="/catalog/dashboard") Dashboard
+        li.nav-item
+          if choice==='help'
+            a.nav-link.active(href="/catalog/help") Help
+          else
+            a.nav-link(href="/catalog/help") Help
+        li.nav-item
+          if choice==='upload'
+            a.nav-link.active(href="/catalog/fileUpload") Upload
+          else
+            a.nav-link(href="/catalog/fileupload") Upload
+
+    block content
+
+    div.footer
+      hr
+      ul.footer-nav
+        li
+          a.nav-link.active(href="/") Home
+        li
+          a.nav-link.active(href="/catalog/admin") Admin
+        li
+          a.nav-link.active(href="/catalog/dashboard") Dashboard
+        li
+          a.nav-link.active(href="/catalog/help") Help
+        li
+          a.nav-link.active(href="/catalog/fileUpload") Upload

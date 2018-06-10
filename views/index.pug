@@ -1,0 +1,48 @@
+extends layout
+block variables
+  -var choice='home';
+
+block content
+  .container.filter-bar
+    .filter-section
+      button#yesterday.btn.btn-primary.btn-sm.qck-search.btnDisabled(role='button' onclick='filterByDay(-1)') yesterday
+      button#today.btn.btn-primary.btn-sm.qck-search.btnEnabled(type='button' onclick='filterByDay(0)') today
+      button#tomorrow.btn.btn-primary.btn-sm.qck-search.btnDisabled(type='button' onclick='filterByDay(1)') tomorrow
+    .filter-section
+      button#open.btn.btn-primary.btn-sm.qck-search.btnEnabled(type='button' onclick='filterByStatus1("open")') open
+      button#closed.btn.btn-primary.btn-sm.qck-search.btnDisabled(type='button' onclick='filterByStatus1("closed")') closed
+    .filter-section
+      button#original.btn.btn-primary.btn-sm.qck-search.btnDisabled(type='button' onclick='filterByStatus2("original")') original
+      button#added.btn.btn-primary.btn-sm.qck-search.btnEnabled(type='button' onclick='filterByStatus2("added")') added
+      button#cancelled.btn.btn-primary.btn-sm.qck-search.btnDisabled(type='button' onclick='filterByStatus2("cancelled")') cancelled
+    .filter-section
+      button#inuse.btn.btn-primary.btn-sm.qck-search.btnEnabled(type='button' onclick='filterByStatus3("use")') in use
+      button#hold.btn.btn-primary.btn-sm.qck-search.btnDisabled(type='button' onclick='filterByStatus3("hold")') hold
+      button#reject.btn.btn-primary.btn-sm.qck-search.btnDisabled(type='button' onclick='filterByStatus3("reject")') reject
+    .filter-section
+      button#packing.btn.btn-primary.btn-sm.qck-search.btnEnabled(type='button' onclick='filterByArea("packing")') packing
+      button#mixing.btn.btn-primary.btn-sm.qck-search.btnDisabled(type='button' onclick='filterByArea("mixing")') mixing
+    .filter-section
+      form(method='GET' action='/catalog//date/index')
+        input#date_selection.form-control(type='text' name='date_selection' placeholder='DD/MM/YYYY')
+        button.btn.btn-sm.qck-search.btn-primary(type='submit') Submit
+  hr
+
+  div.container
+    p.date production date : #{date}
+    each val in orderinstance_list
+      if val.statusIfOpen === 'open'
+      if val.quantityCompleted / val.quantity <= 0.95
+        a.card(href='/catalog/orderinstance/'+val._id)
+          h6.tileTitle #{val.productName}
+          | prod code: #{val.productCode}<br />
+          | qty: #{val.quantity} cs<br />
+          | qty made: #{val.quantityCompleted} cs<br />
+          | vol: #{val.volume.toFixed(2)} t
+      else
+        a.card.tile-green(href='/catalog/orderinstance/'+val._id)
+          h6.tileTitle #{val.productName}
+          | prod code: #{val.productCode}<br />
+          | quantity: #{val.quantity} cs<br />
+          | qty made: #{val.quantityCompleted} cs<br />
+          | vol: #{val.volume.toFixed(2)} t

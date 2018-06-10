@@ -1,0 +1,8 @@
+add order form must have drop down list for status fields, easier to
+data selection only a string variable at the moment
+app crashing when file uploaded contains invalid date (error handling)
+not responsive
+parsing function needs refactoring
+function calculating dashboard numbers needs refactoring
+quantity update should be adding on top and not updating
+included the full google loader file, no need for this, find another way
